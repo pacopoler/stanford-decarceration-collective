@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 from lxml import etree
+import csv
 
 # Note: NO TBODIES
 doc_xpath = '/html/body/center[2]/table[1]/tr[1]/td[1]/table/tr[2]/td[2]/font'
@@ -11,7 +12,7 @@ facility_xpath = '/html/body/center[2]/table[1]/tr[1]/td[1]/table/tr[10]/td[2]/f
 # Earliest possible release date (may not be actual)
 release_xpath = '/html/body/center[2]/table[1]/tr[1]/td[1]/table/tr[11]/td[2]/font'
 
-def scrape_page(url):
+def scrape_page(url, writer):
     html_record = requests.get(url)
     soup = BeautifulSoup(html_record.text, 'lxml')
     dom = etree.HTML(str(soup))
@@ -20,7 +21,6 @@ def scrape_page(url):
         return ''.join(dom.xpath(xpath)[0].itertext())
 
     doc_number = get_xpath_text(doc_xpath)
-
     if doc_number == '':
         return False
     else:
@@ -29,12 +29,20 @@ def scrape_page(url):
         race = get_xpath_text(race_xpath)
         facility = get_xpath_text(facility_xpath)
 
+        writer.writerow([doc_number, dob, gender, race, facility])
+        
         print(dob, gender, race, facility)
         return True
 
 idoc_id = 1e5
 
-while idoc_id < 2e5:
-    print(idoc_id)
-    scrape_page(f'https://www.in.gov/apps/indcorrection/ofs/ofs?previous_page=1&detail={int(idoc_id)}')
-    idoc_id += 1
+with open('idoc_data.csv', 'w', newline='') as file:
+    fieldnames = ['doc_id', 'dob', 'gender', 'race', 'facility']
+    writer = csv.writer(file, dialect='excel')
+    
+    writer.writerow(fieldnames)
+
+    while idoc_id < 1e5 + 10:
+        scrape_page(f'https://www.in.gov/apps/indcorrection/ofs/ofs?previous_page=1&detail={int(idoc_id)}', writer)
+        idoc_id += 1
+    file.close()
