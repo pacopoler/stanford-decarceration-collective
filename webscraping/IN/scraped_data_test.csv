@@ -1,0 +1,6 @@
+,doc_id,dob,gender,race,facility,sentence_start,sentence_desc,conviction_type,citation_code,sentence_release,sentence_length_years,sentence_length_months,sentence_length_days
+0,100000,05/1976,Male,Black,Returned to court authority on release,2011-07-18,FAILURE TO REGISTER AS A SEX OFFENDER,FD,11-8-8-17,2015-08-25,00,05,00030
+1,100000,05/1976,Male,Black,Returned to court authority on release,1999-12-22,RAPE,FB,35-42-4-1,2020-03-10,20,00,00000
+2,100000,05/1976,Male,Black,Returned to court authority on release,2016-03-21,FAILURE TO REGISTER AS A SEX OFFENDER,FD,11-8-8-17,2018-04-16,00,02,00029
+3,100000,05/1976,Male,Black,Returned to court authority on release,2011-07-18,FAILURE TO REGISTER AS A SEX OFFENDER,FD,11-8-8-17,2019-09-30,00,06,00016
+4,100000,05/1976,Male,Black,Returned to court authority on release,2020-08-24,FAILURE TO REGISTER AS A SEX OFFENDER,F5,11-8-8-17,2021-10-06,02,00,00000
