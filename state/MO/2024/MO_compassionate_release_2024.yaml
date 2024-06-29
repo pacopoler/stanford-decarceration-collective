@@ -1,0 +1,22 @@
+user_inputs:
+    start_year: 2025.0  # [CHANGE IF IT'S STARTING LATER THAN WE EXPECT]
+    projection_years: 10.0
+    speed_run: true
+
+compartments_architecture:
+    pretrial: shell
+    prison: full
+    release: full
+
+reference_date: 2019.0
+# january
+time_step: 0.08333333333
+# one month
+
+data_inputs:
+  big_query_simulation_tag: MO_compassionate_release_2024
+
+per_year_costs:
+# marginal costs
+  prison: 7130.0  # [CHECK THIS!!!]
+  release: 0.0
