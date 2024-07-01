@@ -1,5 +1,5 @@
 user_inputs:
-    start_year: 2025.0  # [CHANGE IF IT'S STARTING LATER THAN WE EXPECT]
+    start_year: 2022.0  # [CHANGE IF IT'S STARTING LATER THAN WE EXPECT]
     projection_years: 10.0
     speed_run: true
 
