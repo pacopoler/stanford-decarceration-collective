@@ -5,3 +5,5 @@
 # PyCharm files
 .idea/
 __pycache__/
+
+state/MO/MO_data/MO_parsed_clean.csv

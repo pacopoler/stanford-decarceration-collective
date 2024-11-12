@@ -1,7 +1,7 @@
 user_inputs:
     start_year: 2019.0  # [CHANGE IF IT'S STARTING LATER THAN WE EXPECT]
     projection_years: 10.0
-    speed_run: true
+    speed_run: false
 
 compartments_architecture:
     pretrial: shell
@@ -18,5 +18,5 @@ data_inputs:
 
 per_year_costs:
 # marginal costs
-  prison: 7130.0  # [CHECK THIS!!!]
+  prison: 19378.0  # [CHECK THIS!!!]
   release: 0.0
